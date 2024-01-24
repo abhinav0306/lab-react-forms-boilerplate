@@ -31,7 +31,14 @@ const Forms = () => {
     setFormdata((prev) => ({ ...prev, [name]: value }));
   }
   function handleFocus(name) {
-    setFocus((prevFocus) => ({ ...prevFocus, [name]: true }));
+    let obj={
+        firstName: false,
+    lastName: false,
+    email: false,
+    contact: false,
+    }
+    obj[name]=true
+    setFocus(obj)
   }
 
   function handleSubmit(el) {
@@ -58,7 +65,9 @@ const Forms = () => {
       }
 
       if (formdata.contact === "") {
-        msgBox.contact = "Enter correct phone number";
+        msgBox.contact = "Please enter phone number";
+      } else if (!/^\d{10}$/.test(formdata.contact)) {
+        msgBox.contact = "Invalid phone number.";
       } else {
         msgBox.contact = "";
       }
@@ -66,6 +75,7 @@ const Forms = () => {
       setAlert(msgBox);
       if(msgBox.firstName=='' && msgBox.lastName=="" && msgBox.email==''&& msgBox.contact==''){
         setSuccess(true)
+        setFormdata(initState);
       }
   }
 
