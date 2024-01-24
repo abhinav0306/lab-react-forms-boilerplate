@@ -80,7 +80,7 @@ const Forms = () => {
             onChange={handleChange}
             onFocus={() => handleFocus("firstName")}
             placeholder="Enter your first name"
-            style={{ borderColor: focus.firstName ? "blue" : "#ccc" }}
+            style={{ borderColor: focus.firstName ? "orange" : "#ccc" }}
           />
           <div>{alert.firstName}</div>
         </label>
@@ -92,7 +92,7 @@ const Forms = () => {
             onChange={handleChange}
             onFocus={() => handleFocus("lastName")}
             placeholder="Enter your last name"
-            style={{ borderColor: focus.lastName ? "blue" : "#ccc" }}
+            style={{ borderColor: focus.lastName ? "orange" : "#ccc" }}
           />
           <div>{alert.lastName}</div>
         </label>
@@ -104,7 +104,7 @@ const Forms = () => {
             onChange={handleChange}
             onFocus={() => handleFocus("email")}
             placeholder="Enter your email"
-            style={{ borderColor: focus.email ? "blue" : "#ccc" }}
+            style={{ borderColor: focus.email ? "orange" : "#ccc" }}
           />
           <div>{alert.email}</div>
         </label>
@@ -116,11 +116,11 @@ const Forms = () => {
             onChange={handleChange}
             onFocus={() => handleFocus("contact")}
             placeholder="Enter your conatct number"
-            style={{ borderColor: focus.contact ? "blue" : "#ccc" }}
+            style={{ borderColor: focus.contact ? "orange" : "#ccc" }}
           />
           <div>{alert.contact}</div>
         </label>
-        <button>Submit</button>
+        <button className="btn">Submit</button>
       </form>
       <div>
         {success && (<div className="success">Your form has been successfully submitted.</div>)}
